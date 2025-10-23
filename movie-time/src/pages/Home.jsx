@@ -3,20 +3,11 @@ import SearchBar from "../components/SearchBar";
 import CategoryFilter from "../components/CategoryFilter";
 import MovieCard from "../components/MovieCard";
 
-import { useEffect } from "react";
+import useFetchMovies from "../hooks/useFetchMovies";
 
 function Home(){
 
-useEffect(()=>{
-       fetch("https://api.tvmaze.com/shows")
-        .then(res => {
-            
-            return res.json();
-        })
-        .then(data =>{
-            console.log(data)
-        })
-    },[]);
+const {movie} = useFetchMovies();
  return (
   <>
   
@@ -26,7 +17,15 @@ useEffect(()=>{
   <SearchBar/>
   <CategoryFilter />
   <MovieCard/>
-  <p></p>
+  <div className="bg-gray-300 border-2 gap-2 border-amber-300 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 ">{
+    movie.map((mov)=>(
+      <div key={mov.id}>
+        <img src={mov.image?.medium}/>
+        <p>{mov.name}</p>
+        <p>{mov.language}</p>
+      </div>
+    ))
+    }</div>
   </section>
   </>
  )
