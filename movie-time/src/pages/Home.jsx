@@ -4,10 +4,14 @@ import CategoryFilter from "../components/CategoryFilter";
 import MovieCard from "../components/MovieCard";
 
 import useFetchMovies from "../hooks/useFetchMovies";
+import useFavorite from "../hooks/useFavorites";
+import { Link } from "react-router-dom";
 
 function Home(){
 
-const {movie} = useFetchMovies();
+const {movie, loading, error} = useFetchMovies();
+const {handleClick} = useFavorite()
+
  return (
   <>
   
@@ -17,13 +21,19 @@ const {movie} = useFetchMovies();
   <SearchBar/>
   <CategoryFilter />
   <MovieCard/>
-  <div className="bg-gray-300 border-2 gap-2 border-amber-300 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 ">{
+  {error&& <p>{error}</p>}
+  {loading && <p>Loading... </p>}
+  <div className="bg-gray-300 border-2 gap-2 border-amber-300 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 p-6 ">
+    {
     movie.map((mov)=>(
-      <div key={mov.id}>
+    <Link to ={`/movie/${mov.id}`}>
+        <div key={mov.id}>
         <img src={mov.image?.medium}/>
         <p>{mov.name}</p>
         <p>{mov.language}</p>
+        <button onClick={handleClick} className="bg-gray-200 p-2 rounded text-amber-800">Add to favorite</button>
       </div>
+    </Link>
     ))
     }</div>
   </section>
