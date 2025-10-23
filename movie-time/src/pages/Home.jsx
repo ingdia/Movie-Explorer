@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 function Home(){
 
-const {movie, loading, error} = useFetchMovies();
+const {movie, loading, error} = useFetchMovies("https://api.tvmaze.com/shows");
 const {handleClick} = useFavorite()
 
  return (
@@ -29,6 +29,7 @@ const {handleClick} = useFavorite()
     <Link to ={`/movie/${mov.id}`}>
         <div key={mov.id}>
         <img src={mov.image?.medium}/>
+        <p>{mov.status}</p>
         <p>{mov.name}</p>
         <p>{mov.language}</p>
         <button onClick={handleClick} className="bg-gray-200 p-2 rounded text-amber-800">Add to favorite</button>

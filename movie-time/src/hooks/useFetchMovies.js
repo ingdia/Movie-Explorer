@@ -1,14 +1,15 @@
 import React from "react"
 import { useState, useEffect } from "react"
+// trying to make a reused fetching hook for all endpoint 
 
-function useFetchMovies () {
+function useFetchMovies (url) {
 
     const [movie, setMovies] = useState([])
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(true)
     
     useEffect(()=>{
-           fetch("https://api.tvmaze.com/shows")
+           fetch(url)// we will pass different endpoint 
             .then(res => {
                 if(!res.ok){
                     throw Error ("failed to get resources")
@@ -25,7 +26,7 @@ function useFetchMovies () {
                setLoading(false)
                setError(err.message) 
             })
-        },[]);
+        },[url]);
   return ({movie, loading, error})
 }
 export default useFetchMovies 
