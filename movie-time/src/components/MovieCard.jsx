@@ -35,7 +35,7 @@ function MovieCard({ movie, isFav, AddtoFavorite, RemoveFromMyFavorite }) {
         <p className="py-4 ">{movie.name}</p>
        </div>
       </Link>
-      <p className="md:absolute md:rotate-[-20deg] md:ml-30 bg-gray-500   md:px-4 hover:px-8 rounded-2xl md:-mt-40 ">{movie.language}</p>
+      <p className="md:absolute md:rotate-[-20deg] md:ml-30 bg-gray-500   md:px-4 hover:px-8 rounded-2xl md:-mt-30 ">{movie.language}</p>
       {button}
     </div>
   );
