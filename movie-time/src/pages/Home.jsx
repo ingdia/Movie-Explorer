@@ -2,42 +2,48 @@ import React from "react";
 import SearchBar from "../components/SearchBar";
 import CategoryFilter from "../components/CategoryFilter";
 import MovieCard from "../components/MovieCard";
+import image from "../assets/images/image.png"
 
 import useFetchMovies from "../hooks/useFetchMovies";
-import useFavorite from "../hooks/useFavorites";
+
 import { Link } from "react-router-dom";
 
-function Home(){
+function Home({AddtoFavorite,isFav}){
 
 const {movie, loading, error} = useFetchMovies("https://api.tvmaze.com/shows");
-const {handleClick} = useFavorite()
 
+
+// if (!movie || movie.length === 0) return <div>No movies found.</div>;
  return (
   <>
   
-  <section className=" min-h-screen px-4 text-center">
+  <section className=" min-h-screen px-4 text-center bg-black text-white">
     
   <h1> Hello this the movie time</h1>
+
+  <div>
+    <img  src={image}/>
+  </div>
   <SearchBar/>
   <CategoryFilter />
-  <MovieCard/>
+ 
   {error&& <p>{error}</p>}
   {loading && <p>Loading... </p>}
-  <div className="bg-gray-300 border-2 gap-2 border-amber-300 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 p-6 ">
+  <div className="bg-black text-white gap-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 p-16">
     {
-    movie.map((mov)=>(
-    <Link to ={`/movie/${mov.id}`}>
-        <div key={mov.id}>
-        <img src={mov.image?.medium}/>
-        <p>{mov.status}</p>
-        <p>{mov.name}</p>
-        <p>{mov.language}</p>
-        <button onClick={handleClick} className="bg-gray-200 p-2 rounded text-amber-800">Add to favorite</button>
-      </div>
-    </Link>
+     movie&&movie.map((mov)=>(
+     
+      <MovieCard key={mov.id} movie={mov} AddtoFavorite={AddtoFavorite} isFav={isFav}/>
+     
+ 
     ))
     }</div>
+
+
+    
   </section>
+
+  
   </>
  )
 }

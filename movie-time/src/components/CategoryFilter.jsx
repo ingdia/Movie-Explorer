@@ -6,7 +6,7 @@ export default function CategoryFilter(){
     return(
         <>
  {/* this the conatiner of filtered category  */}
-        <div>
+        {/* <div>
         {category.map((cat, index)=>(
            <div key={index} >
             <div>
@@ -16,7 +16,7 @@ export default function CategoryFilter(){
 
            </div> 
         ))}
-        </div>
+        </div> */}
         </>
     )
 }
