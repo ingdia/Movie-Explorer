@@ -56,7 +56,7 @@ function Home({ AddtoFavorite, isFav }) {
           Showing:  {selectedCategory} category
         </h2>
       )}
-      <div className="bg-black md:pb-20 text-white gap-6 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 mt-10">
+      <div className="bg-black md:pb-20 text-white gap-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 xl:grid-col-7 2xl:grid-cols-8 mt-10">
         {displayedMovies.map((mov) => (
           <MovieCard
             key={mov.id}

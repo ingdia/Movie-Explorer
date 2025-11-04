@@ -4,7 +4,7 @@ export default function CategoryFilter({ onSelectCategory }) {
   const categories = ["Animation", "Action", "Drama", "Comedy", "Fantasy"];
 
   return (
-    <div className="flex gap-4 justify-center mt-4">
+    <div className="grid  grid-cols-3 md:grid-cols-6 gap-4 justify-center mt-4">
       {categories.map((cat) => (
         <button
           key={cat}

@@ -24,7 +24,7 @@ function MovieCard({ movie, isFav, AddtoFavorite, RemoveFromMyFavorite }) {
   }
 
   return (
-    <div key={movie.id} className=" font-serif  bg-neutral-900 hover:rounded-xl  hover:p-3 p-2 rounded border-2 border-gray-400 hover:border-green-600">
+    <div key={movie.id} className=" font-serif  bg-neutral-900 hover:rounded-2xl  hover:p-3 p-2 rounded-xl border-2 border-gray-400 hover:border-green-600">
       <Link to={`/movie/${movie.id}`}>
        <div className="relative">
         <img src={movie.image?.medium} alt={movie.name} className="rounded-b-2xl h-60 w-60" />
@@ -35,7 +35,7 @@ function MovieCard({ movie, isFav, AddtoFavorite, RemoveFromMyFavorite }) {
         <p className="py-4 ">{movie.name}</p>
        </div>
       </Link>
-      <p className="md:absolute md:rotate-[-20deg] md:ml-30 bg-gray-500   md:px-4 hover:px-8 rounded-2xl md:-mt-30 ">{movie.language}</p>
+      <p className="md:absolute md:rotate-[-20deg] md:ml-30 bg-gray-500  w-20 mb-2  md:px-4  rounded-2xl md:-mt-30 ">{movie.language}</p>
       {button}
     </div>
   );
