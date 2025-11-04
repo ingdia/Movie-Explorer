@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import MovieDetails from "./pages/MovieDetails";
 import Favorites from "./pages/Favorites";
 import useFavorite from "./hooks/useFavorites";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Route path = '/favorites' element= {<Favorites favorite={favorite} AddtoFavorite={AddtoFavorite}  RemoveFromMyFavorite={RemoveFromMyFavorite}  isFav={isFav} />}/>
       <Route path ='/movie/:id' element = {<MovieDetails />}/>
     </Routes>
+    <Footer/>
     </BrowserRouter>
   );
 }

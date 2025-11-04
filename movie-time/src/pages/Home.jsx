@@ -24,7 +24,7 @@ const {movie, loading, error} = useFetchMovies("https://api.tvmaze.com/shows");
  
   {error&& <p>{error}</p>}
   {loading && <p>Loading... </p>}
-  <div className="bg-black text-white gap-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 mt-10">
+  <div className="bg-black md:pb-20 text-white gap-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 mt-10">
     {
      movie&&movie.map((mov)=>(
      

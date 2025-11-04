@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import useFetchMovies from "../hooks/useFetchMovies";
+import { MoveLeft } from "lucide-react";
 
 function MovieDetails() {
   const { id } = useParams();
@@ -12,9 +13,9 @@ function MovieDetails() {
   if (!movie) return <div>Movie not found.</div>;
 
   return (
-    <div className="p-4">
-      <Link to="/" className="text-blue-500 underline mb-4 inline-block">
-        Back to Home
+    <div className=" bg-black text-white p-40 font-serif">
+      <Link to="/" className="flex flex-col md:flex-row space-x-6 text-green-500 underline mb-4 ">
+       <MoveLeft/> Back to Home
       </Link>
 
       <div className="flex flex-col md:flex-row items-start gap-6">
@@ -29,14 +30,14 @@ function MovieDetails() {
           <p><strong>Status:</strong> {movie.status}</p>
           <p><strong>Language:</strong> {movie.language}</p>
           <p><strong>Genres:</strong> {movie.genres?.join(", ")}</p>
-          <p><strong>Premiered:</strong> {movie.premiered}</p>
-          <p><strong>Rating:</strong> {movie.rating?.average || "N/A"}</p>
+          <p><strong>Premiegreen:</strong> {movie.premiegreen}</p>
+          <p className='bg-amber-600 text-white font-bold px-2 w-[110px]'><strong>Rating:</strong> {movie.rating?.average || "N/A"}</p>
           <p className="mt-4" dangerouslySetInnerHTML={{ __html: movie.summary }} />
           <a
             href={movie.url}
             target="_blank"
             rel="noreferrer"
-            className="text-purple-600 underline block mt-2"
+            className="bg-green-600 w-40 px-4 p-1 rounded-full underline block mt-2"
           >
             View on TVMaze 
           </a>
