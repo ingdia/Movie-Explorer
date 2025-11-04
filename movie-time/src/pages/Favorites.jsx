@@ -13,7 +13,7 @@ function Favorites({ favorite, AddtoFavorite, isFav, RemoveFromMyFavorite}) {
       {favorite.length === 0 ? (
         <p className="text-white text-2xl">You have no favorite movies yet.</p>
       ) : (
-        <div className=" grid grid-cols-2 space-x-3 sm:grid-cols-3 md:grid-cols-5 p-6">
+        <div className=" grid grid-cols-1 space-x-3 sm:grid-cols-3 md:grid-cols-5 p-6">
           {favorite.map((movie) => (
             <MovieCard key={movie.id} movie={movie} isFav={isFav} AddtoFavorite={AddtoFavorite} RemoveFromMyFavorite={RemoveFromMyFavorite}/>
           ))}
