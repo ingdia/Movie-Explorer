@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 
 function useFetchMovies (url) {
 
-    const [movie, setMovies] = useState(null)
+    const [movie, setMovies] = useState([])
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null)
     

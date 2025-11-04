@@ -67,7 +67,7 @@ function Hero() {
   const currentMovie = trendingMovies[currentSlide];
 
   return (
-    <div className="relative w-full overflow-hidden bg-black">
+    <div className="relative w-full overflow-hidden bg-black pt-20">
       <div className="relative h-[70vh] md:h-[80vh]">
 
         {/* Background image with soft blur + parallax effect */}

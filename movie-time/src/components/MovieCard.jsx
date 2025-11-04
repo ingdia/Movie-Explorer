@@ -7,7 +7,7 @@ function MovieCard({ movie, isFav, AddtoFavorite, RemoveFromMyFavorite }) {
     button = (
       <button
         onClick={() => RemoveFromMyFavorite(movie)}
-        className="bg-green-500 p-2 rounded text-white"
+        className="bg-green-500 p-2 rounded-full text-white"
       >
         Remove from Favorite
       </button>
@@ -24,7 +24,7 @@ function MovieCard({ movie, isFav, AddtoFavorite, RemoveFromMyFavorite }) {
   }
 
   return (
-    <div key={movie.id} className=" font-serif  bg-neutral-900 hover:rounded-xl  hover:p-2 rounded border-2 border-gray-400 hover:border-green-600">
+    <div key={movie.id} className=" font-serif  bg-neutral-900 hover:rounded-xl  hover:p-3 p-2 rounded border-2 border-gray-400 hover:border-green-600">
       <Link to={`/movie/${movie.id}`}>
        <div className="relative">
         <img src={movie.image?.medium} alt={movie.name} className="rounded-b-2xl h-60 w-60" />

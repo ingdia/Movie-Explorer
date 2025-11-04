@@ -1,23 +1,25 @@
 import React from "react";
 
-export default function CategoryFilter(){
-   const category = ["drama", "animated", "Fantansy"]
+export default function CategoryFilter({ onSelectCategory }) {
+  const categories = ["Animation", "Action", "Drama", "Comedy", "Fantasy"];
 
-    return(
-        <>
- {/* this the conatiner of filtered category  */}
-        {/* <div>
-        {category.map((cat, index)=>(
-           <div key={index} >
-            <div>
-                {cat[index]}
-               
-            </div>
-
-           </div> 
-        ))}
-        </div> */}
-        </>
-    )
+  return (
+    <div className="flex gap-4 justify-center mt-4">
+      {categories.map((cat) => (
+        <button
+          key={cat}
+          onClick={() => onSelectCategory(cat)}
+          className="px-4 py-2 border border-green-600 rounded-full text-white hover:bg-green-600 transition"
+        >
+          {cat}
+        </button>
+      ))}
+      <button
+        onClick={() => onSelectCategory("")}
+        className="px-4 py-2 border border-gray-500 rounded-full text-white hover:bg-gray-600 transition"
+      >
+        All
+      </button>
+    </div>
+  );
 }
-
