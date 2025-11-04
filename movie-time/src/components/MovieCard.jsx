@@ -28,10 +28,10 @@ function MovieCard({ movie, isFav, AddtoFavorite, RemoveFromMyFavorite }) {
       <Link to={`/movie/${movie.id}`}>
        <div className="relative">
         <img src={movie.image?.medium} alt={movie.name} className="rounded-b-2xl h-60 w-full object-fill" />
-  <p className="bg-green-600  absolute  px-1 md:px-4  top-2 left-2 ">
+  <p className="bg-green-600  absolute   px-1 md:px-4  top-2 left-2 ">
   {movie.status}
 </p>
- <p className="bg-gray-600    absolute  px-1 md:px-4   writing-vertical-rl bottom-16 right-2 ">{movie.language}</p>
+ <p className="bg-gray-600    absolute  px-1 md:px-4  bg-gradient-to-t from-green-600 to-gray-600  writing-vertical-rl bottom-16 right-2 ">{movie.language}</p>
         <p className="py-4 ">{movie.name}</p>
        </div>
       </Link>
