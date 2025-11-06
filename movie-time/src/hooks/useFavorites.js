@@ -8,7 +8,7 @@ export  default function useFavorite(){
     if (!isFav(movie)){
      let myfavoriteList =  [...favorite, movie];
      setToFavorite(myfavoriteList);
-     alert(`added the this ${movie.name} to favorite`);
+     alert( ` You added  this movie called  ${movie.name} to your  favorites`);
      return myfavoriteList
     }
     else{
@@ -20,8 +20,8 @@ export  default function useFavorite(){
      if(isFav(movie)){
     const updatedFavoriteList= favorite.filter((m)=>m.id !==movie.id);
     setToFavorite(updatedFavoriteList);
-    alert(`Removed ${movie.name} from favorites`);
-    console.log("removing", movie.id, favorite);
+    alert(`you are about to remove${movie.name} from favorites`);
+    console.log(" you are about to remove", movie.id, favorite);
     }
   }
   return({favorite,AddtoFavorite,  RemoveFromMyFavorite, isFav})
