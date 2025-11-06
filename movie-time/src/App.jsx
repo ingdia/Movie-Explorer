@@ -8,12 +8,12 @@ import Footer from "./components/Footer";
 
 
 function App() {
-   const { favorite, AddtoFavorite,  RemoveFromMyFavorite, isFav } = useFavorite();
+  const { favorite, AddtoFavorite, RemoveFromMyFavorite, isFav } = useFavorite();
   return (
     <BrowserRouter>
     <Navbar />
     <Routes>
-      <Route path = '/' element= {<Home  AddtoFavorite={AddtoFavorite} isFav={isFav} />}/>
+      <Route path = '/' element= {<Home  AddtoFavorite={AddtoFavorite}   RemoveFromMyFavorite={RemoveFromMyFavorite}  isFav={isFav} />}/>
       <Route path = '/favorites' element= {<Favorites favorite={favorite} AddtoFavorite={AddtoFavorite}  RemoveFromMyFavorite={RemoveFromMyFavorite}  isFav={isFav} />}/>
       <Route path ='/movie/:id' element = {<MovieDetails />}/>
     </Routes>

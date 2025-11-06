@@ -5,7 +5,7 @@ import MovieCard from "../components/MovieCard";
 import useFetchMovies from "../hooks/useFetchMovies";
 import Hero from "../components/Hero";
 
-function Home({ AddtoFavorite, isFav }) {
+function Home({ AddtoFavorite, isFav ,RemoveFromMyFavorite}) {
   const { movie = [], loading, error } = useFetchMovies("https://api.tvmaze.com/shows");
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -62,6 +62,7 @@ function Home({ AddtoFavorite, isFav }) {
             key={mov.id}
             movie={mov}
             AddtoFavorite={AddtoFavorite}
+            RemoveFromMyFavorite={RemoveFromMyFavorite}
             isFav={isFav}
           />
         ))}

@@ -17,10 +17,11 @@ export  default function useFavorite(){
   }
 
   function RemoveFromMyFavorite (movie){
-     if(!isFav(movie)){
+     if(isFav(movie)){
     const updatedFavoriteList= favorite.filter((m)=>m.id !==movie.id);
     setToFavorite(updatedFavoriteList);
     alert(`Removed ${movie.name} from favorites`);
+    console.log("removing", movie.id, favorite);
     }
   }
   return({favorite,AddtoFavorite,  RemoveFromMyFavorite, isFav})

@@ -41,5 +41,5 @@ function MovieCard({ movie, isFav, AddtoFavorite, RemoveFromMyFavorite }) {
   );
 }
 
-
+ 
 export default MovieCard
