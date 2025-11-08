@@ -3,13 +3,16 @@ import { useState, useEffect } from "react"
 // trying to make a reused fetching hook for all endpoint 
 
 function useFetchMovies (url) {
-
-    const [movie, setMovies] = useState([])
+    // Handle both array (all shows) and object (single show) responses
+    const [movie, setMovies] = useState(null)
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null)
     
     useEffect(()=>{
-           fetch(url)// we will pass different endpoint 
+        setLoading(true);
+        setError(null);
+        
+        fetch(url)// we will pass different endpoint 
             .then(res => {
                 console.log("Fetch status:", res.status);
                 if(!res.ok){

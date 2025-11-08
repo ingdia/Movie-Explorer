@@ -1,8 +1,29 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export  default function useFavorite(){
- const [favorite, setToFavorite] = useState([]);
-   const isFav= (movie) => favorite.some((m)=> m.id===movie.id);
+  // Initialize from localStorage if available
+  const [favorite, setToFavorite] = useState(() => {
+    
+    try {
+      //read data
+      const storedMovie = localStorage.getItem('favorites');
+      return storedMovie ? JSON.parse(storedMovie) : [];
+    } catch (error) {
+      console.error('Error loading favorites from localStorage:', error);
+      return [];
+    }
+  });
+
+  // Save to localStorage whenever favorites change
+  useEffect(() => {
+    try {
+      localStorage.setItem('favorites', JSON.stringify(favorite));
+    } catch (error) {
+      console.error('Error saving favorites to localStorage:', error);
+    }
+  }, [favorite]);
+
+  const isFav = (movie) => favorite.some((m)=> m.id===movie.id);
 
   function AddtoFavorite(movie){
     if (!isFav(movie)){

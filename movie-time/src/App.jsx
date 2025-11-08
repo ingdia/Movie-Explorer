@@ -1,4 +1,4 @@
-import { BrowserRouter , Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import MovieDetails from "./pages/MovieDetails";
@@ -11,13 +11,13 @@ function App() {
   const { favorite, AddtoFavorite, RemoveFromMyFavorite, isFav } = useFavorite();
   return (
     <BrowserRouter>
-    <Navbar />
-    <Routes>
-      <Route path = '/' element= {<Home  AddtoFavorite={AddtoFavorite}   RemoveFromMyFavorite={RemoveFromMyFavorite}  isFav={isFav} />}/>
-      <Route path = '/favorites' element= {<Favorites favorite={favorite} AddtoFavorite={AddtoFavorite}  RemoveFromMyFavorite={RemoveFromMyFavorite}  isFav={isFav} />}/>
-      <Route path ='/movie/:id' element = {<MovieDetails />}/>
-    </Routes>
-    <Footer/>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home AddtoFavorite={AddtoFavorite} RemoveFromMyFavorite={RemoveFromMyFavorite} isFav={isFav} />} />
+        <Route path='/favorites' element={<Favorites favorite={favorite} AddtoFavorite={AddtoFavorite} RemoveFromMyFavorite={RemoveFromMyFavorite} isFav={isFav} />} />
+        <Route path='/movie/:id' element={<MovieDetails AddtoFavorite={AddtoFavorite} RemoveFromMyFavorite={RemoveFromMyFavorite} isFav={isFav} />} />
+      </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

@@ -5,8 +5,9 @@ import MovieCard from "../components/MovieCard";
 import useFetchMovies from "../hooks/useFetchMovies";
 import Hero from "../components/Hero";
 
-function Home({ AddtoFavorite, isFav ,RemoveFromMyFavorite}) {
-  const { movie = [], loading, error } = useFetchMovies("https://api.tvmaze.com/shows");
+function Home({ AddtoFavorite, isFav, RemoveFromMyFavorite }) {
+  const { movie: moviesData, loading, error } = useFetchMovies("https://api.tvmaze.com/shows");
+  const movie = Array.isArray(moviesData) ? moviesData : [];
 
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -51,7 +52,7 @@ function Home({ AddtoFavorite, isFav ,RemoveFromMyFavorite}) {
         <p className="mt-6">No movies found.</p>
       )}
 
-       {selectedCategory && (
+      {selectedCategory && (
         <h2 className="text-2xl md:text-3xl font-bold text-green-500 mt-6">
           Showing:  {selectedCategory} category
         </h2>

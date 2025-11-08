@@ -115,8 +115,9 @@ src/
 - **Responsive Grid**: Adaptive layout for different screen sizes
 - **Modern Icons**: Lucide React icons for better UX
 
-##  Screenshots(coming soon)
+##  Screenshots
 
+Add screenshots of your application here:
 - Home page with movie grid
 - Movie details page
 - Favorites page
@@ -125,8 +126,10 @@ src/
 
 ##  Live Demo
 
-**Live Demo**: [Add your live demo link here(coming soon)]
-- Vercel: [Your Vercel URL]
+**Live Demo**: [Add your live demo link here]
+- Deploy using Vercel, Netlify, or GitHub Pages
+- Update this section with your deployment URL
+- Example: [https://your-app-name.vercel.app](https://your-app-name.vercel.app)
 
 
 ##  Acknowledgments
