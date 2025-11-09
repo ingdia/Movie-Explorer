@@ -1,4 +1,4 @@
-<img width="1366" height="938" alt="screencapture-movie-explorer-gilt-five-vercel-app-movie-18-2025-11-09-14_05_09" src="https://github.com/user-attachments/assets/20144f85-6c66-44da-b86b-455feac08086" />#  Movie Explorer
+#  Movie Explorer
 
 A modern, responsive React application for exploring and managing your favorite movies and TV shows. Built with React, React Router, and the TVMaze API.
 
