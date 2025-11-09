@@ -4,6 +4,7 @@ import CategoryFilter from "../components/CategoryFilter";
 import MovieCard from "../components/MovieCard";
 import useFetchMovies from "../hooks/useFetchMovies";
 import Hero from "../components/Hero";
+import usePagination from "../hooks/usePagination";
 
 function Home({ AddtoFavorite, isFav, RemoveFromMyFavorite }) {
   const { movie: moviesData, loading, error } = useFetchMovies("https://api.tvmaze.com/shows");
@@ -11,7 +12,7 @@ function Home({ AddtoFavorite, isFav, RemoveFromMyFavorite }) {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
-
+   
   // Filter by search
   const searchResults = movie.filter((mov) =>
     mov.name?.toLowerCase().includes(searchTerm.toLowerCase())
@@ -35,6 +36,8 @@ function Home({ AddtoFavorite, isFav, RemoveFromMyFavorite }) {
     else return movie;
   })();
 
+  const {currentMoviesOnPage,goToNextPage,goToPreviousPage,currentPage,totalPages} = usePagination(displayedMovies, 20);
+
   return (
     <section className="min-h-screen px-6 md:px-20 pt-10 text-center bg-black text-white">
       <Hero className="pt-20" />
@@ -57,8 +60,8 @@ function Home({ AddtoFavorite, isFav, RemoveFromMyFavorite }) {
           Showing:  {selectedCategory} category
         </h2>
       )}
-      <div className="bg-black md:pb-20 text-white gap-6 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 2xl:grid-cols-8  mt-10">
-        {displayedMovies.map((mov) => (
+      <div className="bg-black md: pb-20 text-white gap-6 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 2xl:grid-cols-8  mt-10">
+        {currentMoviesOnPage.map((mov) => (
           <MovieCard
             key={mov.id}
             movie={mov}
@@ -68,6 +71,22 @@ function Home({ AddtoFavorite, isFav, RemoveFromMyFavorite }) {
           />
         ))}
       </div>
+
+      {/* pagination  */}
+    
+<div className="pb-10 flex justify-end">
+   <button onClick={goToPreviousPage} disabled={currentPage===1} className="bg-green-800 text-white px-4 py-2 m-2 rounded disabled:bg-gray-400">
+    Prev
+    </button>
+
+    <div className="flex py-4 space-x-2">
+     <p>{currentPage}</p><p>Outof </p> <p>{totalPages}</p>
+    </div>
+    <button onClick={goToNextPage} disabled={currentPage===totalPages} className="bg-green-800 text-white px-4 py-2 m-2 rounded disabled:bg-gray-400">
+      Next
+    </button>
+</div>
+
     </section>
   );
 }

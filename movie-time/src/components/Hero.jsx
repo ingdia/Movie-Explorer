@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Play, Star } from 'lucide-react';
 
+
 function Hero() {
   // Track which movie slide is active
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -9,6 +10,7 @@ function Hero() {
   // Controls auto-play behavior (pause when user interacts)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
+ 
   const trendingMovies = [
     {
       id: 1,
