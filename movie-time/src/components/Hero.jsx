@@ -119,13 +119,13 @@ function Hero() {
 
               
               <div className="flex gap-4 pt-4">
-                <Link to="/">
+                <Link to="/Home">
                   <button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold px-8 py-3 rounded-full transition-all duration-300 flex items-center gap-2 shadow-lg shadow-green-600/50 hover:scale-105">
                     <Play size={20} fill="white" />
                     Watch Now
                   </button>
                 </Link>
-                <Link to="/">
+                <Link to="/Home">
                   <button className="border-2 border-green-600 text-green-400 hover:bg-green-600 hover:text-white font-bold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105">
                     Explore More
                   </button>

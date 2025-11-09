@@ -15,7 +15,7 @@ export default function SearchBar({ onSearch }) {
       value={query}
       onChange={handleSearch}
       placeholder="Search movies..."
-      className="p-2  md:mt-30 border-2 border-green-800 text-gray-100 mt-2 rounded-full md:w-[300px]"
+      className="p-2  md:mt-30 border-2 border-green-800 text-gray-100 mt-8 rounded-full md:w-[300px]"
     />
   );
 }

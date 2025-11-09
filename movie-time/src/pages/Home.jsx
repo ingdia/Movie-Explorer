@@ -43,7 +43,7 @@ function Home({ AddtoFavorite, isFav, RemoveFromMyFavorite }) {
       <Hero className="pt-20" />
 
       {/* Filters */}
-      <div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-4 md:gap-8 mt-6">
+      <div className="flex flex-col md:flex-row  space-y-10 justify-center md:justify-between items-center gap-4 md:gap-8 mt-6">
         <SearchBar onSearch={setSearchTerm} />
         <CategoryFilter onSelectCategory={setSelectedCategory} />
       </div>
