@@ -33,11 +33,11 @@ A modern, responsive React application for exploring and managing your favorite 
 ```
 src/
 ├── components/
-│   ├── Navbar.jsx          # Navigation bar with search and links
+│   ├── Navbar.jsx          # Navigation bar with  links
 │   ├── MovieCard.jsx       # Reusable movie card component
 │   ├── SearchBar.jsx       # Search input component
 │   ├── CategoryFilter.jsx  # Genre/category filter component
-│   ├── Hero.jsx            # Hero section with featured movies
+│   ├── Hero.jsx            # Hero section with featured movies(dumy movies)
 │   └── Footer.jsx          # Footer with links and information
 ├── pages/
 │   ├── Home.jsx            # Main page with movie list
@@ -45,11 +45,15 @@ src/
 │   └── Favorites.jsx       # User's favorite movies page
 ├── hooks/
 │   ├── useFetchMovies.js   # Custom hook for fetching movie data
-│   └── useFavorites.js     # Custom hook for managing favorites (localStorage)
-├── utils/
-│   └── api.js              # API utility functions
+│   ├── useFavorites.js     # Custom hook for managing favorites (localStorage)
+│   └── usePagination.js    # Custom hook for pagination functionality
+├── assets/
+│   ├── images/             # Image assets
+│   └── react.svg           # React logo
 ├── App.jsx                 # Main app component with routing
-└── main.jsx                # Application entry point
+├── App.css                 # App-specific styles
+├── main.jsx                # Application entry point
+└── index.css               # Global styles
 ```
 
 ##  Installation
