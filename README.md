@@ -1,4 +1,4 @@
-<img width="1366" height="2828" alt="screencapture-movie-explorer-gilt-five-vercel-app-2025-11-09-14_01_22" src="https://github.com/user-attachments/assets/5830ba8c-b781-4902-9555-9ca2a3394608" /><img width="1366" height="2828" alt="screencapture-movie-explorer-gilt-five-vercel-app-2025-11-09-14_01_22" src="https://github.com/user-attachments/assets/b593cec4-7c80-4529-b36d-17d8b15da2f9" />#  Movie Explorer
+<img width="1366" height="938" alt="screencapture-movie-explorer-gilt-five-vercel-app-movie-18-2025-11-09-14_05_09" src="https://github.com/user-attachments/assets/20144f85-6c66-44da-b86b-455feac08086" />#  Movie Explorer
 
 A modern, responsive React application for exploring and managing your favorite movies and TV shows. Built with React, React Router, and the TVMaze API.
 
@@ -117,20 +117,13 @@ src/
 
 ##  Screenshots
 
-- Home page with movie grid
-  ![Home page](![Uploading screencapture-movie-explorer-gilt-five-vercel-app-2025-11-09-14_01_22.png…])
+- Home page with movie grid <img width="1366" height="2828" alt="screencapture-movie-explorer-gilt-five-vercel-app-2025-11-09-14_01_22" src="https://github.com/user-attachments/assets/f2088f5e-d24c-42f8-a0c2-8d48d1b24087" />
 
-- Movie details page
-  ![Movie details](![Uploading screencapture-movie-explorer-gilt-five-vercel-app-2025-11-09-14_01_22.png…])
+- Movie details page <img width="1366" height="938" alt="screencapture-movie-explorer-gilt-five-vercel-app-movie-18-2025-11-09-14_05_09" src="https://github.com/user-attachments/assets/4613cc24-205e-466d-a67c-014dc5094d76" />
 
 - Favorites page<img width="1366" height="887" alt="screencapture-movie-explorer-gilt-five-vercel-app-favorites-2025-11-09-14_06_49" src="https://github.com/user-attachments/assets/d726ed7e-a3dc-4bc9-be17-552798ed1dd0" />
 
-  ![Favorite page]( )
-- Search functionality
-- Mobile responsive views
-
 ##  Live Demo
-
 **Live Demo**
 - Vercel: (https://movie-explorer-gilt-five.vercel.app/)
 
